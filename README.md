@@ -2,6 +2,8 @@
 
 TLLM is a command-line interface tool that allows you to interact with Anthopic's Claude LLM, directly from your terminal. It provides a seamless way to send prompts, receive responses, and optionally include context or save outputs to files.
 
+https://github.com/user-attachments/assets/1d80f099-c14b-4b1c-99fd-37a9d7770334
+
 ## Features
 
 - Direct interaction with Claude AI from the command line
