@@ -1,6 +1,6 @@
 # TLLM - Terminal Language Learning Model
 
-TLLM is a command-line interface tool that allows you to interact with Claude, an AI language model, directly from your terminal. It provides a seamless way to send prompts, receive responses, and optionally include context or save outputs to files.
+TLLM is a command-line interface tool that allows you to interact with Anthopic's Claude LLM, directly from your terminal. It provides a seamless way to send prompts, receive responses, and optionally include context or save outputs to files.
 
 ## Features
 
@@ -64,12 +64,12 @@ tllm -i /path/to/input/file.txt "Your prompt here"
 
 With output file to save the response:
 ```
-tllm -o /path/to/output/file.txt "Your prompt here"
+tllm "Your prompt here" > /path/to/output/file.txt
 ```
 
 Combining input and output files:
 ```
-tllm -i /path/to/input/file.txt -o /path/to/output/file.txt "Your prompt here"
+tllm -i /path/to/input/file.txt "Your prompt here" > /path/to/output/file.txt
 ```
 
 ## Examples
