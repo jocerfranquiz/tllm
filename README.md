@@ -47,6 +47,11 @@ Replace `your_actual_api_key_here` with your Claude API key.
 
 ## Usage
 
+Help:
+```
+tllm -h
+```
+
 Basic usage:
 ```
 tllm "Your prompt here"
@@ -71,7 +76,7 @@ tllm -i /path/to/input/file.txt -o /path/to/output/file.txt "Your prompt here"
 
 1. Simple query:
    ```
-   tllm "What is the capital of France?"
+   tllm "what is heat? in 20 words"
    ```
 
 2. Providing context from a file:
@@ -81,7 +86,7 @@ tllm -i /path/to/input/file.txt -o /path/to/output/file.txt "Your prompt here"
 
 3. Saving the response to a file:
    ```
-   tllm -o ~/documents/ai_response.txt "Explain quantum computing"
+   tllm "Explain quantum computing" > ~/documents/ai_response.txt
    ```
 
 ## Error Handling
