@@ -2,7 +2,7 @@
 
 # TLLM - Terminal Language Learning Model
 # Version: 0.0.1
-# Copyright (C) 2023 @pax
+# Copyright (C) 2024 @jocerfranquiz
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,10 +19,10 @@
 
 # Function to display usage information
 usage() {
-    echo "Usage: tllm [-i <input_file>] [-o <output_file>] \"<prompt>\""
-    echo "  -i <input_file>  Optional input file for context"
-    echo "  -o <output_file> Optional file to save the output"
-    echo "  \"<prompt>\"       The prompt to send to Claude API (must be in quotes)"
+    echo "Usage: tllm [-i <input_file>] [-o <output_file>] [-h] \"<prompt>\""
+    echo "  -i <input_file>   Optional input file for context"
+    echo "  -h, --help        Display this help message"
+    echo "  \"<prompt>\"        The prompt to send to Claude API (must be in quotes)"
     exit 1
 }
 
@@ -83,10 +83,17 @@ main() {
     local prompt=""
 
     # Parse command line arguments
-    while getopts ":i:o:" opt; do
+    while getopts ":i:o:h-:" opt; do
         case $opt in
             i) input_file="$OPTARG" ;;
             o) output_file="$OPTARG" ;;
+            h) usage ;;
+            -)
+                case "${OPTARG}" in
+                    help) usage ;;
+                    *) echo "Invalid option: --${OPTARG}" >&2; usage ;;
+                esac
+                ;;
             \?) echo "Invalid option: -$OPTARG" >&2; usage ;;
             :) echo "Option -$OPTARG requires an argument." >&2; usage ;;
         esac
